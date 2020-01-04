@@ -1,20 +1,15 @@
 using System;
-using System.Collections.Generic;
 
-namespace App.API.Models
+namespace App.API.Dtos
 {
-    public class User
+    public class UserForListDto
     {
         public int  Id { get; set; }
         public string Username { get; set; }
 
-        public byte[] PasswordHash { get; set; }
-
-        public byte[] PasswordSalt { get; set; }
-
         public string Type { get; set; }
 
-        public DateTime FoundedIn { get; set; }
+        public int YearsActive { get; set; }
 
         public string KnownAs { get; set; }
 
@@ -22,12 +17,11 @@ namespace App.API.Models
 
         public DateTime LastActive { get; set; }
 
-        public string Description { get; set; }
-
         public string City { get; set; }
 
         public string Country { get; set; }
+
+        public string PhotoUrl { get; set; }        
         
-        public ICollection<Photo> Photos { get; set; }
     }
 }
