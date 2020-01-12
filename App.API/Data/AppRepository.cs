@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using App.API.Models;
 using Microsoft.EntityFrameworkCore;
+using App.API.Helpers;
 
 namespace App.API.Data
 {
@@ -37,10 +38,25 @@ namespace App.API.Data
             return user;
         }
 
-        public async Task<IEnumerable<User>> GetUsers()
+        public async Task<PagedList<User>> GetUsers(UserParams userParams)
         {
-            var users = await _context.Users.Include(p => p.Photos).ToListAsync();
-            return users;
+            var users = _context.Users.Include(p => p.Photos).AsQueryable();
+
+            users = users.Where(u => u.Id != userParams.UserId);
+
+            users = users.Where(u => u.Type == userParams.Type);
+
+            if (userParams.Country != null){
+            
+              users = users.Where(u => u.Country == userParams.Country);
+            }  
+
+            if (userParams.City!= null){
+            
+                users = users.Where(u => u.City == userParams.City);
+            }
+
+            return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
         }
 
         public async Task<Photo> GetPhoto(int id)

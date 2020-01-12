@@ -3,11 +3,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BsDropdownModule, TabsModule, BsDatepickerModule} from 'ngx-bootstrap';
+import {BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule} from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
 import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
+import {TimeAgoPipe} from 'time-ago-pipe';
+import { TimeagoModule } from 'ngx-timeago';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -54,7 +56,8 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       MemberCardComponent, 
       MemberDetailComponent, 
       MemberEditComponent, 
-      PhotoEditorComponent
+      PhotoEditorComponent,
+      TimeAgoPipe
    ],
    imports: [
       BrowserModule,
@@ -64,10 +67,12 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       ReactiveFormsModule,
       BsDropdownModule.forRoot(),
       BsDatepickerModule.forRoot(),
+      PaginationModule.forRoot(),
       TabsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
       FileUploadModule,
+      TimeagoModule.forRoot(),
       JwtModule.forRoot({
          config: {
             tokenGetter: tokenGetter,

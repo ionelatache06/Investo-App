@@ -1,8 +1,52 @@
+<div class="text-center mt-3">
+  <h2>Your matches - {{pagination.totalItems}} found</h2>
+</div>
+
 <div class="container mt-4">
+
+  <form class="form-inline" #form="ngForm" (ngSubmit) = "loadUsers()" novalidate>
+    <div class="form-group">
+      <label for="country">Country</label>
+      <input type="text" class="form-control ml-1" style="width: 70px" id="country" 
+      [(ngModel)]="userParams.country" name="country">
+    </div>
+  
+    <div class="form-group px-2">
+      <label for="city">City</label>
+      <input type="text" class="form-control ml-1" style="width: 70px" id="city" 
+      [(ngModel)]="userParams.city" name="city">
+    </div>
+  
+    <div class="form-group px-2">
+      <label for="type">Show: </label>
+      <select class="form-control ml-1" style="width: 130px" id="type"
+        [(ngModel)]="userParams.type" name="type">
+        <option *ngFor="let type of typeList" [value]="type.value">
+          {{type.display}}
+        </option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-left:10px">Apply Filters</button>
+    <button type="button" class="btn btn-info" (click)="resetFilters()" style="margin-left:10px">Reset Filter</button>
+  
+  </form>
+  <br>
+
+  
     <div class="row">
         <div *ngFor="let user of users" class="col-lg-2 col-md-3 col-sm-6">
         <app-member-card [user]="user"></app-member-card>
     </div>
   </div>
+</div>
+
+<div class="d-flex justify-content-center" >
+  <pagination [boundaryLinks]="true" 
+              [totalItems]="pagination.totalItems"
+              [itemsPerPage] = "pagination.itemsPerPage"
+              [(ngModel)]="pagination.currentPage"
+              (pageChanged) = "pageChanged($event)"
+            previousText="&lsaquo;" nextText="&rsaquo;" firstText="&laquo;" lastText="&raquo;">
+  </pagination>
 </div>
 
