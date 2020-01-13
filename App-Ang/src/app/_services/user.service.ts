@@ -29,9 +29,20 @@ getUsers(
   let params = new HttpParams();
 
   if (page != null && itemsPerPage != null) {
-    params = params.append('pageNumber', page);
-    params = params.append('pageSize', itemsPerPage);
+   params = params.append('pageNumber', page);
+   params = params.append('pageSize', itemsPerPage);
   }
+
+  //if (userParams.country == null) {
+   //params = params.append('city', userParams.city);
+   //params = params.append('type', userParams.type);
+   //params = params.append('orderBy', userParams.orderBy);
+  //}
+
+  //if (userParams.country == null && userParams.city == null) {
+  //params = params.append('type', userParams.type);
+  //params = params.append('orderBy', userParams.orderBy);
+  //}
 
   if (userParams != null) {
     params = params.append('country', userParams.country);
@@ -80,6 +91,10 @@ setMainPhoto(userId: number, id: number) {
 
 deletePhoto(userId: number, id: number) {
   return this.http.delete(this.baseUrl + 'users/' + userId + '/photos/' + id);
+}
+
+sendLike(id:number, recipientId: number){
+  return this.http.post(this.baseUrl + 'users/' + id + '/like/' + recipientId, {});
 }
 
 }
