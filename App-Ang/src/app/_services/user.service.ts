@@ -37,7 +37,7 @@ getUsers(
     params = params.append('country', userParams.country);
     params = params.append('city', userParams.city);
     params = params.append('type', userParams.type);
-    //params = params.append('orderBy', userParams.orderBy);
+    params = params.append('orderBy', userParams.orderBy);
   }
 
   if (likesParam === 'Likers') {

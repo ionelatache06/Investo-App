@@ -19,6 +19,8 @@ namespace App.API.Helpers
 
         public string City { get; set; }    
 
+        public string OrderBy { get; set; }
+
 
     }
 }

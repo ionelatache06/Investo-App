@@ -31,6 +31,9 @@ export class MemberListComponent implements OnInit {
     });
 
     this.userParams.type = this.user.type === 'startup' ? 'investor' : 'startup';
+    this.userParams.country = 'Romania';
+    this.userParams.city = 'Bucharest';
+    this.userParams.orderBy = 'lastActive';
 }
 
   pageChanged(event: any): void {
@@ -51,7 +54,7 @@ export class MemberListComponent implements OnInit {
     }, error => {
       this.alertify.error(error);
     });
-    this.clearUserParams(); 
+    this.clearUserParams();   
   }
 
   clearUserParams(){
