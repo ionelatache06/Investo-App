@@ -9,6 +9,7 @@ import { JWT_OPTIONS, JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import { TimeagoModule } from 'ngx-timeago';
+import { EmbedVideo } from 'ngx-embed-video';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -75,6 +76,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
       FileUploadModule,
+      EmbedVideo.forRoot(),
       TimeagoModule.forRoot(),
       JwtModule.forRoot({
          config: {

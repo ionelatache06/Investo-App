@@ -1,8 +1,8 @@
-.card:hover img {
+ .card:hover img {
     transform: scale(1.2, 1.2);
     transition-duration: 500ms;
     transition-timing-function: ease-out;
-    opacity: 0.7;
+    /* opacity: 0.7; */
 }
 
 .card img {
@@ -33,4 +33,13 @@
 
 .animate {
     transition: all 0.3s ease-in-out;
-}
+} 
+
+/* .card-text {
+    animation-name: fadeInUp;
+    animation-duration: 4s;
+} */
+
+/* .border {
+    color: #18BC9C;
+}  */
