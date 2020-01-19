@@ -42,6 +42,11 @@
         <tab heading="About {{user?.knownAs}}">
           <h4>Description</h4>
           <p>{{user.description}}</p>
+
+          <div [innerHtml]="iframe_html"></div>
+        <!-- <iframe src="https://www.youtube.com/embed/iHhcHTlGtRs?rel=0" frameborder="0" 
+          allowfullscreen></iframe> -->
+
         </tab>  
         <tab heading = "Photos">
           <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>

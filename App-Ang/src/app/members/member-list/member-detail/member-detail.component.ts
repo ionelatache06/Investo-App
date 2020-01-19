@@ -5,6 +5,7 @@ import { AlertifyService } from 'src/app/_services/alertify.service';
 import { ActivatedRoute } from '@angular/router';
 import {NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation} from 'ngx-gallery';
 import { TabsetComponent } from 'ngx-bootstrap';
+import { EmbedVideoService } from 'ngx-embed-video';
 
 @Component({
   selector: 'app-member-detail',
@@ -16,12 +17,17 @@ export class MemberDetailComponent implements OnInit {
   user: User;
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
+  iframe_html: any;
+  youtubeUrl = "https://www.youtube.com/watch?v=iHhcHTlGtRs?rel=0";
 
   constructor(
     private userService: UserService,
     private alertify: AlertifyService,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private embedService: EmbedVideoService
+  ){
+    this.iframe_html = this.embedService.embed(this.youtubeUrl);
+  }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
