@@ -31,7 +31,7 @@ namespace App.API.Migrations
                     b.ToTable("Likes");
                 });
 
-            modelBuilder.Entity("App.API.Models.Message", b =>
+            modelBuilder.Entity("App.API.Models.Message1", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -67,7 +67,7 @@ namespace App.API.Migrations
 
                     b.HasIndex("SenderId");
 
-                    b.ToTable("Messages");
+                    b.ToTable("Messages1");
                 });
 
             modelBuilder.Entity("App.API.Models.Photo", b =>
@@ -122,6 +122,12 @@ namespace App.API.Migrations
                     b.Property<DateTime>("FoundedIn")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Income")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Industry")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("KnownAs")
                         .HasColumnType("TEXT");
 
@@ -134,10 +140,25 @@ namespace App.API.Migrations
                     b.Property<byte[]>("PasswordSalt")
                         .HasColumnType("BLOB");
 
+                    b.Property<string>("Story")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Testimonials")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Type")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("USP")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Username")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Video")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Website")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -174,7 +195,7 @@ namespace App.API.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("App.API.Models.Message", b =>
+            modelBuilder.Entity("App.API.Models.Message1", b =>
                 {
                     b.HasOne("App.API.Models.User", "Recipient")
                         .WithMany("MessagesReceived")

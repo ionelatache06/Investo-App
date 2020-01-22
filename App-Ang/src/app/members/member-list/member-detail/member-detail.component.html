@@ -31,7 +31,7 @@
         <div class="card-footer">
           <div class="btn-group d-flex">
             <button class= "btn btn-success  w-100">Like</button>
-            <button class="btn btn-warning w-100" (click)="selectTab(3)">Message</button>
+            <button class="btn btn-warning w-100" (click)="selectTab(2)">Message</button>
           </div>   
         </div>
       </div>
@@ -43,7 +43,21 @@
           <h4>Description</h4>
           <p>{{user.description}}</p>
 
-          <div [innerHtml]="iframe_html"></div>
+          <h4>Testimonials</h4>
+          <p>{{user.testimonials}}</p>
+
+          <h4>How we got here</h4>
+          <p>{{user.story}}</p>
+
+          <h4>Income</h4>
+          <p>{{user.income}} $</p>
+
+          <h4>Website</h4>
+          <p>{{user.website}}</p>
+
+          <h4>Video</h4>
+
+          <div [innerHtml]="iframe_html"></div> 
         <!-- <iframe src="https://www.youtube.com/embed/iHhcHTlGtRs?rel=0" frameborder="0" 
           allowfullscreen></iframe> -->
 
@@ -54,9 +68,13 @@
         <tab heading="Messages">
           <app-member-messages [recipientId]="user.id"></app-member-messages>
       </tab>
-        </tabset>
+      </tabset>
       </div>
     </div>  
   </div>
-</div>
+</div> 
+
+
+
+
 

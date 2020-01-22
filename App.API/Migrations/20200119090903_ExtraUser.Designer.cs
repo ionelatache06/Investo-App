@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace App.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200113051522_MessageEntityAdded")]
-    partial class MessageEntityAdded
+    [Migration("20200119090903_ExtraUser")]
+    partial class ExtraUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -124,6 +124,12 @@ namespace App.API.Migrations
                     b.Property<DateTime>("FoundedIn")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Income")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Industry")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("KnownAs")
                         .HasColumnType("TEXT");
 
@@ -136,10 +142,25 @@ namespace App.API.Migrations
                     b.Property<byte[]>("PasswordSalt")
                         .HasColumnType("BLOB");
 
+                    b.Property<string>("Story")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Testimonials")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Type")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("USP")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Username")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Video")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Website")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -202,4 +223,4 @@ namespace App.API.Migrations
 #pragma warning restore 612, 618
         }
     }
-}    
+}

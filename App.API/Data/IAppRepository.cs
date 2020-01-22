@@ -21,10 +21,10 @@ namespace App.API.Data
         Task<Photo> GetMainPhotoForUser(int userId);
         Task<Like> GetLike(int userId, int recipientId);
 
-        Task<Message>GetMessage(int id);
+        Task<Message1>GetMessage(int id);
 
-        Task<PagedList<Message>> GetMessagesForUser(MessageParams messageParams);
+        Task<PagedList<Message1>> GetMessagesForUser(MessageParams messageParams);
 
-        Task<IEnumerable<Message>>GetMessageThread(int userId, int recipientId);
+        Task<IEnumerable<Message1>>GetMessageThread(int userId, int recipientId);
     }
 }

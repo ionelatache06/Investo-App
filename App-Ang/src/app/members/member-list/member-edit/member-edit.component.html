@@ -50,12 +50,42 @@
               <h4>Description</h4>
               <textarea name="description"  rows="6" class="form-control" 
               [(ngModel)]="user.description"></textarea>
+              <h4>Testiomonials</h4>
+              <textarea name="testimonials"  rows="6" class="form-control" 
+              [(ngModel)]="user.testimonials"></textarea>
+              <h4>How we got here</h4>
+              <textarea name="story"  rows="6" class="form-control" 
+              [(ngModel)]="user.story"></textarea>
+              <!-- <h4>Income</h4>
+              <textarea name="income"  rows="6" class="form-control" 
+              [(ngModel)]="user.income"></textarea> -->
+              <!-- <h4>Website</h4>
+              <textarea name="website"  rows="6" class="form-control" 
+              [(ngModel)]="user.website"></textarea>
+              <h4>Video</h4>
+              <textarea name="video"  rows="6" class="form-control" 
+              [(ngModel)]="user.video"></textarea> -->
+              <br/>
+              <h4>Media:</h4>
+              <div class="form-inline">
+                <label for="website">Website URL</label>
+                <input class= "form-control" type="text" name="website" [(ngModel)]="user.website">
+                <label for="video">Video URL</label>
+                <input class= "form-control" type="text" name="video" [(ngModel)]="user.video">
+              </div><br/>
               <h4>Location Details:</h4>
               <div class="form-inline">
                 <label for="city">City</label>
                 <input class= "form-control" type="text" name="city" [(ngModel)]="user.city">
                 <label for="country">Country</label>
                 <input class= "form-control" type="text" name="country" [(ngModel)]="user.country">
+              </div><br/>
+              <h4>Other:</h4>
+              <div class="form-inline">
+                <label for="income">Income</label>
+                <input class= "form-control" type="text" name="income" [(ngModel)]="user.income">
+                <label for="country">Industry</label>
+                <input class= "form-control" type="text" name="industry" [(ngModel)]="user.industry">
               </div>
           </form>
          

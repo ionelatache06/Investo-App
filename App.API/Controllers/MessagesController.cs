@@ -44,6 +44,7 @@
          public async Task<IActionResult> GetMessagesForUser(int userId, 
              [FromQuery]MessageParams messageParams)
          {
+             
              if (userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
                  return Unauthorized();
 
@@ -87,7 +88,7 @@
               if (recipient == null)
                  return BadRequest("Could not find user");
 
-              var message = _mapper.Map<Message>(messageForCreationDto);
+              var message = _mapper.Map<Message1>(messageForCreationDto);
 
               _repo.Add(message);
 
@@ -100,6 +101,7 @@
 
               throw new Exception("Creating the message failed on save");
          }
+
 
           [HttpPost("{id}")]
          public async Task<IActionResult> DeleteMessage(int id, int userId)
@@ -141,6 +143,6 @@
               await _repo.SaveAll();
 
               return NoContent();
-         }
+        }
      }
- } 
+} 

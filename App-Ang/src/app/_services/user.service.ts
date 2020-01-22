@@ -48,6 +48,7 @@ getUsers(
     params = params.append('country', userParams.country);
     params = params.append('city', userParams.city);
     params = params.append('type', userParams.type);
+    params = params.append('industry', userParams.industry);
     params = params.append('orderBy', userParams.orderBy);
   }
 

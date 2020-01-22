@@ -11,6 +11,13 @@ export interface User {
   photoUrl: string;
   city: string;
   country: string;
+  testimonials: string; 
+  story: string, 
+  USP: string, 
+  industry: string, 
+  income: number, 
+  website: string,
+  video: string,
   description?: string;
   photos?: Photo[];
 }
