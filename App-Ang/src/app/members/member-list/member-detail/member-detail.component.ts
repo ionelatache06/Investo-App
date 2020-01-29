@@ -22,7 +22,7 @@ export class MemberDetailComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
   iframe_html: any;
-  youtubeUrl = "https://www.youtube.com/watch?v=iHhcHTlGtRs?rel=0";
+  //youtubeUrl = "https://www.youtube.com/watch?v=iHhcHTlGtRs?rel=0";
 
   constructor(
     private userService: UserService,
@@ -30,7 +30,9 @@ export class MemberDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private embedService: EmbedVideoService
   ){
-    this.iframe_html = this.embedService.embed(this.youtubeUrl);
+    //this.iframe_html = this.embedService.embed(this.youtubeUrl);
+    //this.iframe_html = this.embedService.embed(this.user.video);
+
   }
 
 ngOnInit() {
@@ -69,6 +71,11 @@ getImages() {
       });
     }
     return imageUrls;
+  }
+
+  getVideo() {
+    this.iframe_html = this.embedService.embed(this.user.video);
+    return this.iframe_html;
   }
 
 selectTab(tabId: number) {

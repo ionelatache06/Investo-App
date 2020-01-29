@@ -13,7 +13,7 @@ export interface User {
   country: string;
   testimonials: string; 
   story: string, 
-  USP: string, 
+  usp: string, 
   industry: string, 
   income: number, 
   website: string,

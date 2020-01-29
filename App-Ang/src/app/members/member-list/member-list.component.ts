@@ -34,6 +34,7 @@ export class MemberListComponent implements OnInit {
     {value: 'engineering', display: 'Engineering'}, 
     {value: 'healthcare', display: 'Healthcare'}, 
     {value: 'farming', display:'Farming'},
+    {value: 'finance', display: 'Finance'},
     {value: 'IT', display: 'IT'},
     {value: 'hr', display: 'HR'}, 
     {value: 'legal', display: 'Legal'}, 

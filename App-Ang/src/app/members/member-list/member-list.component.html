@@ -36,15 +36,15 @@
       </select>
     </div>
 
-    <button type="submit" class="btn btn-primary" style="margin-left:10px">Apply Filters</button>
-    <button type="button" class="btn btn-info" (click)="resetFilters()"
+    <button type="submit" class="btn btn-info" style="margin-left:10px">Apply Filters</button>
+    <button type="button" class="btn btn-primary" (click)="resetFilters()"
     style="margin-left:10px">Reset Filter</button>
     
     <div class="col"> 
       <div class="btn-group float-right">
-        <button type="button" name="orderBy" class="btn btn-primary" style="margin-left:18px"
+        <button type="button" name="orderBy" class="btn btn-secondary" style="margin-left:18px"
         [(ngModel)]="userParams.orderBy" (click) = "loadUsers()" btnRadio = "lastActive" >Lastest</button>
-        <button type="button" name="orderBy" class="btn btn-primary"
+        <button type="button" name="orderBy" class="btn btn-secondary"
         [(ngModel)]="userParams.orderBy" (click)="loadUsers()" btnRadio = "createdAt" >Newest</button>
       </div>
     </div>
