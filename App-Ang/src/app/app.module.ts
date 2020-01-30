@@ -1,6 +1,6 @@
 import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule, ButtonsModule} from 'ngx-bootstrap';
@@ -10,6 +10,8 @@ import { NgxGalleryModule } from 'ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import { TimeagoModule } from 'ngx-timeago';
 import { EmbedVideo } from 'ngx-embed-video';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { MatDividerModule, MatCardModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -34,7 +36,8 @@ import { PhotoEditorComponent } from './members/member-list/photo-editor/photo-e
 import { ListsResolver } from './_resolvers/lists.resolver';
 import { MessagesResolver } from './_resolvers/messages.resolver';
 import { MemberMessagesComponent } from './members/member-list/member-messages/member-messages.component';
-
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { AreaComponent } from './widgets/area/area.component';
 
 export function tokenGetter(){
    return localStorage.getItem('token');
@@ -60,7 +63,10 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       MemberDetailComponent, 
       MemberEditComponent, 
       PhotoEditorComponent,
-      MemberMessagesComponent
+      MemberMessagesComponent,
+      DashboardComponent,
+      AreaComponent
+      
    ],
    imports: [
       BrowserModule,
@@ -78,6 +84,8 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       FileUploadModule,
       EmbedVideo.forRoot(),
       TimeagoModule.forRoot(),
+      HighchartsChartModule, 
+      MatCardModule,
       JwtModule.forRoot({
          config: {
             tokenGetter: tokenGetter,
@@ -103,6 +111,9 @@ export class CustomHammerConfig extends HammerGestureConfig  {
    ],
    bootstrap: [
       AppComponent
+   ], 
+   schemas: [
+      NO_ERRORS_SCHEMA 
    ]
 })
 export class AppModule { }
