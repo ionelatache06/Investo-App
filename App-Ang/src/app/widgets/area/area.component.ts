@@ -78,7 +78,7 @@ export class AreaComponent implements OnInit {
   };
 
   HC_exporting(Highcharts);
-  
+   
   }
 
 }

@@ -38,6 +38,8 @@ import { MessagesResolver } from './_resolvers/messages.resolver';
 import { MemberMessagesComponent } from './members/member-list/member-messages/member-messages.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { AreaComponent } from './widgets/area/area.component';
+import { PieComponent } from './widgets/pie/pie.component';
+import { Line2Component } from './widgets/line2/line2.component';
 
 export function tokenGetter(){
    return localStorage.getItem('token');
@@ -65,7 +67,9 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       PhotoEditorComponent,
       MemberMessagesComponent,
       DashboardComponent,
-      AreaComponent
+      AreaComponent,
+      PieComponent,
+      Line2Component
       
    ],
    imports: [
