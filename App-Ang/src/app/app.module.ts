@@ -40,6 +40,7 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { AreaComponent } from './widgets/area/area.component';
 import { PieComponent } from './widgets/pie/pie.component';
 import { Line2Component } from './widgets/line2/line2.component';
+import { ErrorInterceptorProvider } from './_services/error.interceptor';
 
 export function tokenGetter(){
    return localStorage.getItem('token');
@@ -100,6 +101,7 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       
    ],
    providers: [
+      ErrorInterceptorProvider,
       AuthService,
       AlertifyService,
       AuthGuard,
